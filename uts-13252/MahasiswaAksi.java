@@ -15,16 +15,16 @@ public class MahasiswaAksi {
         int jumlahMahasiswa = input.nextInt();
 
         do {
-            System.out.println("1. Mahasiswa Aktif");
-            System.out.println("2. Mahasiswa Baru");
-            System.out.println("3. Mahasiswa Transfer");
-            System.out.println("4. Mahasiswa Lulus");
-            System.out.print("Pilih Kategori : ");
-            pilih = input.nextInt();
+            for (int i = 0; i < jumlahMahasiswa; i++) {
+                System.out.println("1. Mahasiswa Aktif");
+                System.out.println("2. Mahasiswa Baru");
+                System.out.println("3. Mahasiswa Transfer");
+                System.out.println("4. Mahasiswa Lulus");
+                System.out.print("Pilih Kategori : ");
+                pilih = input.nextInt();
 
-            switch (pilih) {
-                case 1:
-                    for (int i = 0; i < jumlahMahasiswa; i++) {
+                switch (pilih) {
+                    case 1:
                         MahasiswaAktif mhsAktif = new MahasiswaAktif();
                         System.out.println("Data Mahasiswa ke " + "- " + (i + 1));
                         System.out.print("Nama : ");
@@ -40,10 +40,8 @@ public class MahasiswaAksi {
                         mhsAktif.inputKrs();
                         mhsAktif.hitungRataNilai();
                         daftarMahasiswa.add(mhsAktif);
-                    }
-                    break;
-                case 2:
-                    for (int i = 0; i < jumlahMahasiswa; i++) {
+                        break;
+                    case 2:
                         MahasiswaBaru mhsBaru = new MahasiswaBaru();
                         System.out.println("Data Mahasiswa ke " + "- " + (i + 1));
                         System.out.print("Nama : ");
@@ -59,10 +57,8 @@ public class MahasiswaAksi {
                         mhsBaru.inputKrs();
                         mhsBaru.hitungRataNilai();
                         daftarMahasiswa.add(mhsBaru);
-                    }
-                    break;
-                case 3:
-                    for (int i = 0; i < jumlahMahasiswa; i++) {
+                        break;
+                    case 3:
                         MahasiswaTransfer mhsTransfer = new MahasiswaTransfer();
                         System.out.println("Data Mahasiswa ke " + "- " + (i + 1));
                         System.out.print("Nama : ");
@@ -78,10 +74,8 @@ public class MahasiswaAksi {
                         mhsTransfer.inputKrs();
                         mhsTransfer.hitungRataNilai();
                         daftarMahasiswa.add(mhsTransfer);
-                    }
-                    break;
-                case 4:
-                    for (int i = 0; i < jumlahMahasiswa; i++) {
+                        break;
+                    case 4:
                         MahasiswaLulus mhsLulus = new MahasiswaLulus();
                         System.out.println("Data Mahasiswa ke " + "- " + (i + 1));
                         System.out.print("Nama : ");
@@ -97,15 +91,14 @@ public class MahasiswaAksi {
                         mhsLulus.inputKrs();
                         mhsLulus.hitungRataNilai();
                         daftarMahasiswa.add(mhsLulus);
-                    }
-                    break;
+                        break;
+                }
+                for (int a = 0; a < daftarMahasiswa.size(); a++) {
+                    System.out.println("\nData Mahasiswa ke " + "- " + (a + 1));
+                    daftarMahasiswa.get(a).infoMahasiswa();
+                    daftarMahasiswa.get(a).infoKrsMahasiswa();
+                }
             }
-            for (int i = 0; i < daftarMahasiswa.size(); i++) {
-                System.out.println("\nData Mahasiswa ke " + "- " + (i + 1));
-                daftarMahasiswa.get(i).infoMahasiswa();
-                daftarMahasiswa.get(i).infoKrsMahasiswa();
-            }
-
             System.out.print("Input data lagi ? [Y/T] : ");
             cek = input.next();
             System.out.println("");
